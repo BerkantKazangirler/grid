@@ -3,12 +3,6 @@ import classNames from "classnames";
 function App() {
   const data = [
     {
-      row: 1,
-      cols: 1,
-      size: [2, 2],
-      type: "test",
-    },
-    {
       row: 2,
       cols: 1,
       size: [1, 2],
@@ -19,6 +13,12 @@ function App() {
       cols: 1,
       size: [2, 2],
       type: "test",
+    },
+    {
+      row: 5,
+      cols: 1,
+      size: [2, 2],
+      type: "test1",
     },
     {
       row: 1,
@@ -55,9 +55,9 @@ function App() {
   return (
     <>
       <div className="grid grid-cols-4 grid-rows-5 gap-2">
-        {data.map((item) => (
+        {data.map((item, index) => (
           <span
-            key={item.row}
+            key={index}
             className={classNames(
               "bg-blue-900 text-white p-4 rounded-xl",
               `col-span-${item.size[1]}`,
